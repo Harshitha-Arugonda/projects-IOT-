@@ -1,0 +1,29 @@
+const int redLED = 12;    // Red LED connected to digital pin 12
+const int yellowLED = 11; // Yellow LED connected to digital pin 11
+const int greenLED = 10;  // Green LED connected to digital pin 10
+
+void setup() {
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+}
+
+void loop() {
+  // Red light (Stop)
+  digitalWrite(redLED, HIGH);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(greenLED, LOW);
+  delay(3000);  // Stay red for 3 seconds
+
+  // Yellow light (Prepare to Go)
+  digitalWrite(redLED, LOW);
+  digitalWrite(yellowLED, HIGH);
+  digitalWrite(greenLED, LOW);
+  delay(3000);  // Stay yellow for 3 second
+
+  // Green light (Go)
+  digitalWrite(redLED, LOW);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(greenLED, HIGH);
+  delay(3000);  // Stay green for 3 seconds
+}
